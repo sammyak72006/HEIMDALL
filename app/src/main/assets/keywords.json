@@ -1,0 +1,500 @@
+{
+  "dataset_name": "HEIMDALL Threat Detection Comprehensive",
+  "version": "2.0",
+  "strip_negated_sharing_sentences": [
+    "do not share",
+    "never share",
+    "don't share",
+    "not share with anyone",
+    "do not disclose",
+    "never disclose",
+    "don't disclose",
+    "do not give otp",
+    "never give your otp",
+    "never share your otp or upi pin with anyone",
+    "never share your otp"
+  ],
+  "scam": {
+    "urgent_kyc_expiry": {
+      "points": 35,
+      "phrases": [
+        "kyc expired",
+        "update kyc",
+        "kyc has expired",
+        "complete kyc",
+        "re-kyc verification",
+        "re-kyc",
+        "rekyc",
+        "e-kyc",
+        "ekyc",
+        "sbi kyc",
+        "complete your kyc immediately",
+        "update your pan and aadhaar",
+        "verify your bank account to avoid suspension",
+        "submit your documents to reactivate your account",
+        "your account will be closed unless you verify now"
+      ]
+    },
+    "account_blocked_threat": {
+      "points": 35,
+      "phrases": [
+        "account will be blocked",
+        "blocked within 24 hours",
+        "account suspended",
+        "deactivated within 24 hours",
+        "account freeze",
+        "account frozen",
+        "account deactivated",
+        "account restricted",
+        "reactivate account",
+        "your bank account will be blocked today",
+        "account band ho jayega",
+        "sim band ho jayegi"
+      ]
+    },
+    "credential_phishing": {
+      "points": 35,
+      "phrases": [
+        "click here to verify your account",
+        "verify your identity to avoid suspension",
+        "your password will expire today",
+        "login immediately to restore access",
+        "confirm your credentials using this link",
+        "your account will be permanently disabled",
+        "enter your password to receive the refund",
+        "session expired",
+        "security alert: suspicious login",
+        "unauthorized access detected",
+        "verify identity",
+        "reset password immediately"
+      ]
+    },
+    "suspicious_phishing_link": {
+      "points": 30,
+      "phrases": [
+        ".xyz",
+        ".icu",
+        ".top",
+        "http://",
+        "sbi-kyc",
+        "sbi-kyc-update",
+        "update now at",
+        "click here to update",
+        "login-verify",
+        "bit.ly",
+        "tinyurl.com",
+        "shorturl.at",
+        "is.gd",
+        "cutt.ly"
+      ]
+    },
+    "otp_pin_secrets": {
+      "points": 35,
+      "phrases": [
+        "share your otp",
+        "tell me the code you received",
+        "forward the verification code",
+        "enter your upi pin to receive money",
+        "share your cvv for verification",
+        "give us your banking password",
+        "send your seed phrase to verify your wallet",
+        "read out the otp to cancel the transaction",
+        "tell your otp",
+        "send otp to claim",
+        "share otp",
+        "enter otp to receive",
+        "otp batao",
+        "otp share karo",
+        "code bhejo",
+        "pin daalo",
+        "upi pin daalo"
+      ]
+    },
+    "upi_payment_refund": {
+      "points": 25,
+      "phrases": [
+        "scan this qr code to receive money",
+        "enter your upi pin to claim your refund",
+        "approve the collect request to receive payment",
+        "pay a processing fee to release your refund",
+        "your cashback is waiting for verification",
+        "send money to activate your payment",
+        "pay a small fee to release the funds",
+        "click this payment link to reverse the transaction",
+        "receive your refund",
+        "claim your refund",
+        "refund of rs",
+        "refund of ₹",
+        "approve the request",
+        "accept collect request",
+        "approve payment to receive",
+        "accept the request",
+        "paise bhejo",
+        "paisa transfer karo",
+        "refund ke liye fee do",
+        "qr scan karo",
+        "payment approve karo"
+      ]
+    },
+    "fake_customer_support": {
+      "points": 30,
+      "phrases": [
+        "install anydesk to receive your refund",
+        "share your screen to process the payment",
+        "give us remote access to your banking app",
+        "call this unofficial number for customer care",
+        "tell the support agent your otp",
+        "pay a refundable fee to process the refund",
+        "quickassist",
+        "teamviewer support"
+      ]
+    },
+    "digital_arrest_authority": {
+      "points": 40,
+      "phrases": [
+        "digital arrest",
+        "cbi officer",
+        "central bureau of investigation",
+        "cyber crime department",
+        "you are under digital arrest",
+        "do not disconnect this video call",
+        "transfer money to verify your innocence",
+        "pay a security deposit to avoid arrest",
+        "your aadhaar is linked to illegal activity",
+        "do not tell your family about this investigation",
+        "pay immediately to avoid a warrant",
+        "your parcel contains illegal items and contraband",
+        "arrest warrant",
+        "police arrest karegi",
+        "case ho jayega",
+        "video call disconnect mat karna"
+      ]
+    },
+    "job_task_recruitment": {
+      "points": 30,
+      "phrases": [
+        "pay a registration fee to get the job",
+        "deposit money to unlock more tasks",
+        "recharge your task wallet to withdraw earnings",
+        "pay to release your salary",
+        "earn money by liking videos and depositing funds",
+        "guaranteed job without an interview",
+        "deposit more to upgrade your earning level",
+        "like youtube videos",
+        "earn daily on telegram",
+        "part time review task",
+        "earn ₹3000 daily",
+        "ghar baithe kamao",
+        "daily earning",
+        "pehle deposit karo",
+        "task complete karo",
+        "registration fee do",
+        "guaranteed job"
+      ]
+    },
+    "investment_crypto": {
+      "points": 30,
+      "phrases": [
+        "guaranteed profit with zero risk",
+        "double your money in a few days",
+        "deposit more to unlock your withdrawal",
+        "pay tax before withdrawing your profits",
+        "guaranteed daily returns",
+        "share your seed phrase to verify your wallet",
+        "join this private group for guaranteed trading signals",
+        "double your money",
+        "risk-free trading"
+      ]
+    },
+    "lottery_prize_reward": {
+      "points": 30,
+      "phrases": [
+        "you have won a lottery",
+        "won a lottery",
+        "claim your prize",
+        "lottery winner",
+        "congratulations! you have won",
+        "selected for prize",
+        "pay handling charges to claim your prize",
+        "pay tax to release the prize money",
+        "you are our lucky winner",
+        "send your bank details to receive your prize",
+        "pay a refundable fee to claim your reward",
+        "your prize expires today unless you pay",
+        "aap jeet gaye",
+        "inaam mila hai",
+        "lottery lagi hai",
+        "reward claim karo",
+        "prize lene ke liye fee do"
+      ]
+    },
+    "advance_fee_trap": {
+      "points": 25,
+      "phrases": [
+        "pay a small fee",
+        "pay a small fee to claim",
+        "processing fee to claim",
+        "small fee to claim",
+        "transfer charges to receive",
+        "handling charges",
+        "security deposit to release"
+      ]
+    },
+    "courier_parcel_customs": {
+      "points": 30,
+      "phrases": [
+        "your parcel is on hold",
+        "pay a small fee to redeliver the parcel",
+        "update your address to avoid return",
+        "customs fees are unpaid click here",
+        "pay a release fee immediately",
+        "your parcel contains illegal items call this number",
+        "package held at customs"
+      ]
+    },
+    "malware_apk_remote_access": {
+      "points": 35,
+      "phrases": [
+        ".apk",
+        "download apk",
+        "install parivahan apk",
+        "echallan.apk",
+        "install this apk to receive your refund",
+        "enable accessibility to continue",
+        "allow remote control of your phone",
+        "download this app outside the play store",
+        "disable play protect and install the update",
+        "share your screen and open your banking app"
+      ]
+    },
+    "social_media_whatsapp": {
+      "points": 30,
+      "phrases": [
+        "send us the six digit login code",
+        "your account will be disabled permanently",
+        "verify your account to avoid a ban",
+        "your page violates copyright click to appeal",
+        "scan this qr code to link your account",
+        "pay us to recover your banned account",
+        "rent your whatsapp account for commission"
+      ]
+    },
+    "business_email_compromise": {
+      "points": 30,
+      "phrases": [
+        "use these new bank details",
+        "do not call to verify the change",
+        "keep this transaction confidential",
+        "pay this invoice immediately",
+        "urgent transfer from the ceo",
+        "the supplier bank account has changed"
+      ]
+    },
+    "sim_swap_telecom": {
+      "points": 30,
+      "phrases": [
+        "your sim will be deactivated today",
+        "verify sim registration immediately",
+        "share otp to activate your sim",
+        "your number will be disconnected click here",
+        "confirm this number porting request"
+      ]
+    },
+    "rental_marketplace": {
+      "points": 25,
+      "phrases": [
+        "pay advance before viewing the property",
+        "send token money to reserve the flat",
+        "pay a deposit before visiting",
+        "scan this qr code to receive payment"
+      ]
+    },
+    "government_tax_benefits": {
+      "points": 30,
+      "phrases": [
+        "pay a fee to receive the government grant",
+        "your subsidy is approved click here",
+        "update bank details to receive pension",
+        "pay tax clearance charges to release your refund",
+        "claim your government benefit immediately"
+      ]
+    },
+    "romance_emergency_impersonation": {
+      "points": 35,
+      "phrases": [
+        "this is my new number send money",
+        "i had an accident transfer money now",
+        "do not call me just transfer the money",
+        "i sent you a gift but customs needs payment",
+        "i am stuck at the airport please send money",
+        "do not tell anyone about this transfer",
+        "main naye number se baat kar raha hoon",
+        "emergency hai paise bhejo",
+        "kisi ko mat batana, paise bhejo"
+      ]
+    },
+    "sextortion_blackmail": {
+      "points": 40,
+      "phrases": [
+        "pay or i will send your photos to your contacts",
+        "i will leak your video",
+        "send money to delete the recording",
+        "i have recorded you",
+        "do not contact the police",
+        "pay within one hour or i will publish it"
+      ]
+    },
+    "loan_debt_fraud": {
+      "points": 30,
+      "phrases": [
+        "pay a fee before loan disbursement",
+        "loan approved click to claim",
+        "install this app to get instant loan",
+        "pay to improve your cibil score",
+        "transfer money to stop recovery calls",
+        "pay an advance fee to erase your debt"
+      ]
+    },
+    "utility_electricity_fraud": {
+      "points": 35,
+      "phrases": [
+        "electricity will be disconnect",
+        "power will be disconnected",
+        "light will be cut",
+        "disconnected tonight at",
+        "your electricity will be disconnected tonight",
+        "call this number to stop disconnection",
+        "download this app for meter update",
+        "bijli kat jayegi"
+      ]
+    },
+    "urgency_pressure": {
+      "points": 20,
+      "phrases": [
+        "act now or lose access",
+        "do not tell anyone",
+        "ignore all other warnings",
+        "you must pay today",
+        "your account will be permanently deleted",
+        "within 24 hours",
+        "turant",
+        "jaldi karo",
+        "aaj hi",
+        "foran"
+      ]
+    }
+  },
+  "important": {
+    "otp_delivery": {
+      "points": 35,
+      "phrases": [
+        "your otp is",
+        "otp is",
+        "one time password",
+        "verification code is",
+        "secret otp is",
+        "login otp:"
+      ]
+    },
+    "bank_debit_credit_alert": {
+      "points": 35,
+      "phrases": [
+        "debited from",
+        "credited to",
+        "debited from a/c",
+        "credited to a/c",
+        "txn alert",
+        "withdrawn from",
+        "deposited to"
+      ]
+    },
+    "account_balance_info": {
+      "points": 25,
+      "phrases": [
+        "avl bal",
+        "available balance",
+        "bal rs",
+        "acct balance",
+        "clear balance",
+        "balance is rs"
+      ]
+    },
+    "transaction_reference": {
+      "points": 20,
+      "phrases": [
+        "upi ref",
+        "ref no",
+        "transaction id",
+        "rrn",
+        "utr number",
+        "ref 1",
+        "ref:"
+      ]
+    },
+    "security_warning": {
+      "points": 15,
+      "phrases": [
+        "if not you sms block",
+        "call 1930",
+        "report unauthorized",
+        "contact bank immediately"
+      ]
+    }
+  },
+  "spam": {
+    "promotional_discounts": {
+      "points": 30,
+      "phrases": [
+        "mega sale",
+        "flash sale",
+        "flat 50% off",
+        "% off",
+        "flat 40% off",
+        "discount sale",
+        "huge discount",
+        "clearance sale"
+      ]
+    },
+    "promotional_cta": {
+      "points": 20,
+      "phrases": [
+        "shop now",
+        "buy now",
+        "order today",
+        "click to order",
+        "grab now",
+        "book now",
+        "apply now"
+      ]
+    },
+    "terms_and_conditions": {
+      "points": 15,
+      "phrases": [
+        "t&c apply",
+        "terms and conditions apply",
+        "valid till midnight",
+        "limited period offer",
+        "standard tc apply"
+      ]
+    },
+    "opt_out_instruction": {
+      "points": 25,
+      "phrases": [
+        "reply stop to opt out",
+        "reply stop",
+        "sms stop",
+        "to unsubscribe",
+        "send stop",
+        "opt out"
+      ]
+    },
+    "loan_and_credit_cards": {
+      "points": 20,
+      "phrases": [
+        "pre-approved loan",
+        "lifetime free credit card",
+        "exclusive voucher code"
+      ]
+    }
+  }
+}

@@ -108,4 +108,59 @@ class ExampleRobolectricTest {
         assertTrue(qrAnalysis.heuristicScore >= 45)
         assertTrue(qrAnalysis.triggeredRules.any { it.contains("Merchant QR") })
     }
+
+    @Test
+    fun `KeywordRuleEngine classifies all 7 required self-test messages correctly`() = kotlinx.coroutines.runBlocking {
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        com.example.engine.KeywordRuleEngine.loadRules(context)
+
+        // a. Dear customer, your SBI KYC expired... -> Scam (High)
+        val resA = com.example.engine.KeywordRuleEngine.analyze(
+            "Dear customer, your SBI KYC expired. Update KYC now at http://sbi-kyc-update.xyz or your account will be blocked within 24 hours.",
+            context
+        )
+        assertEquals("Scam (High)", resA.category)
+
+        // b. Your OTP is 482915. Do not share it with anyone. -> Important
+        val resB = com.example.engine.KeywordRuleEngine.analyze(
+            "Your OTP is 482915. Do not share it with anyone.",
+            context
+        )
+        assertEquals("Important", resB.category)
+
+        // c. Share your OTP to receive your refund of Rs 5000. Approve the request now. -> Scam
+        val resC = com.example.engine.KeywordRuleEngine.analyze(
+            "Share your OTP to receive your refund of Rs 5000. Approve the request now.",
+            context
+        )
+        assertTrue("Expected Scam, got ${resC.category}", resC.category == "Scam" || resC.category.startsWith("Scam"))
+
+        // d. Rs 2,000 debited from A/c XX1234 on 15-Oct. Avl Bal Rs 10,500. UPI Ref 123456789. -> Important
+        val resD = com.example.engine.KeywordRuleEngine.analyze(
+            "Rs 2,000 debited from A/c XX1234 on 15-Oct. Avl Bal Rs 10,500. UPI Ref 123456789.",
+            context
+        )
+        assertEquals("Important", resD.category)
+
+        // e. MEGA SALE! Flat 50% off. Shop now. T&C apply. Reply STOP to opt out. -> Spam
+        val resE = com.example.engine.KeywordRuleEngine.analyze(
+            "MEGA SALE! Flat 50% off. Shop now. T&C apply. Reply STOP to opt out.",
+            context
+        )
+        assertEquals("Spam", resE.category)
+
+        // f. Congratulations! You have won a lottery. Pay a small fee to claim your prize. -> Scam
+        val resF = com.example.engine.KeywordRuleEngine.analyze(
+            "Congratulations! You have won a lottery. Pay a small fee to claim your prize.",
+            context
+        )
+        assertTrue("Expected Scam, got ${resF.category}", resF.category == "Scam" || resF.category.startsWith("Scam"))
+
+        // g. hey are we meeting at 5? -> Unclear
+        val resG = com.example.engine.KeywordRuleEngine.analyze(
+            "hey are we meeting at 5?",
+            context
+        )
+        assertEquals("Unclear", resG.category)
+    }
 }

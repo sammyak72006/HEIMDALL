@@ -85,7 +85,7 @@ fun ActionPlaybookCard(
         Spacer(modifier = Modifier.height(12.dp))
 
         Text(
-            text = "Recommended Safety Steps:",
+            text = "Recommended Action Steps:",
             style = MaterialTheme.typography.titleSmall.copy(
                 fontWeight = FontWeight.Bold,
                 color = Color.White

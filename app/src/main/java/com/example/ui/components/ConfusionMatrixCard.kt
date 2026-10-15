@@ -182,7 +182,7 @@ fun ConfusionMatrixCard(
             )
             MatrixValueCell(
                 count = matrix.trueNegatives,
-                label = "True Safe",
+                label = "True Benign",
                 color = RiskSafeGreen,
                 modifier = Modifier.weight(1.3f)
             )

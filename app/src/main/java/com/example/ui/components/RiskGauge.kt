@@ -39,7 +39,8 @@ import com.example.ui.theme.RiskWarningContainer
 fun RiskGauge(
     riskScore: Int,
     riskLevel: RiskLevel,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    category: String = ""
 ) {
     val animatedProgress = remember { Animatable(0f) }
 
@@ -50,10 +51,23 @@ fun RiskGauge(
         )
     }
 
-    val (statusColor, containerColor, labelText, symbol) = when (riskLevel) {
-        RiskLevel.LOW -> Quadruple(RiskSafeGreen, RiskSafeContainer, "SAFE • LOW RISK", "✓")
-        RiskLevel.MEDIUM -> Quadruple(RiskWarningAmber, RiskWarningContainer, "SUSPICIOUS • CAUTION", "!")
-        RiskLevel.HIGH -> Quadruple(RiskDangerRed, RiskDangerContainer, "DANGER • HIGH SCAM RISK", "⚠")
+    val (statusColor, containerColor, labelText, symbol) = when {
+        category.equals("Scam (High)", ignoreCase = true) ->
+            Quadruple(RiskDangerRed, RiskDangerContainer, "SCAM (HIGH)", "⚠")
+        category.startsWith("Scam", ignoreCase = true) || riskLevel == RiskLevel.HIGH ->
+            Quadruple(RiskDangerRed, RiskDangerContainer, if (category.isNotBlank()) category.uppercase() else "SCAM", "⚠")
+        category.equals("Important", ignoreCase = true) || riskLevel == RiskLevel.IMPORTANT ->
+            Quadruple(Color(0xFF42A5F5), Color(0xFF1565C0).copy(alpha = 0.35f), "IMPORTANT", "★")
+        category.equals("Spam", ignoreCase = true) || riskLevel == RiskLevel.SPAM ->
+            Quadruple(Color(0xFFFFB74D), Color(0xFFE65100).copy(alpha = 0.35f), "SPAM", "📢")
+        category.startsWith("Couldn't", ignoreCase = true) ->
+            Quadruple(RiskWarningAmber, RiskWarningContainer, "COULDN'T CHECK", "!")
+        category.equals("Unclear", ignoreCase = true) || riskLevel == RiskLevel.UNCLEAR || riskLevel == RiskLevel.LOW ->
+            Quadruple(Color(0xFF9E9E9E), Color(0xFF424242).copy(alpha = 0.35f), "UNCLEAR", "?")
+        riskLevel == RiskLevel.MEDIUM ->
+            Quadruple(RiskWarningAmber, RiskWarningContainer, "SCAM (MEDIUM)", "⚠")
+        else ->
+            Quadruple(Color(0xFF9E9E9E), Color(0xFF424242).copy(alpha = 0.35f), "UNCLEAR", "?")
     }
 
     Column(

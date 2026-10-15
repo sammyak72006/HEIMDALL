@@ -9,9 +9,12 @@ enum class ScanType(val label: String) {
 }
 
 enum class RiskLevel(val label: String) {
-    LOW("Safe / Low Risk"),
+    UNCLEAR("Unclear"),
+    LOW("Low Risk"),
     MEDIUM("Caution / Suspicious"),
-    HIGH("Danger / Scam Alert")
+    HIGH("Danger / Scam Alert"),
+    IMPORTANT("Important"),
+    SPAM("Spam")
 }
 
 enum class FraudScenario(val displayName: String, val description: String) {
@@ -74,7 +77,11 @@ data class ScanResult(
     val heuristicScore: Int,
     val aiScore: Int,
     val analysisTimeMs: Long,
-    val threatFeedMatch: String? = null
+    val threatFeedMatch: String? = null,
+    val classifiedCategory: String = "Unclear",
+    val decisionPath: String = "rules",
+    val ruleAnalysis: com.example.engine.KeywordRuleEngine.AnalysisResult? = null,
+    val errorMessage: String? = null
 )
 
 data class BenchmarkCase(

@@ -244,9 +244,9 @@ fun NotificationCard(
                         "SUSPICIOUS"
                     )
                     else -> Triple(
-                        RiskSafeGreen.copy(alpha = 0.15f),
-                        RiskSafeGreen,
-                        "SAFE"
+                        Color(0xFF9E9E9E).copy(alpha = 0.15f),
+                        Color(0xFFB0BEC5),
+                        "UNCLEAR"
                     )
                 }
 

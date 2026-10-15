@@ -204,9 +204,11 @@ private fun HistoryItemCard(
     onClick: () -> Unit
 ) {
     val riskColor = when (scan.riskLevel) {
-        RiskLevel.LOW -> RiskSafeGreen
-        RiskLevel.MEDIUM -> RiskWarningAmber
         RiskLevel.HIGH -> RiskDangerRed
+        RiskLevel.MEDIUM -> RiskWarningAmber
+        RiskLevel.IMPORTANT -> Color(0xFF42A5F5)
+        RiskLevel.SPAM -> Color(0xFFFFB74D)
+        else -> Color(0xFF9E9E9E)
     }
 
     val dateFormat = remember { SimpleDateFormat("dd MMM, hh:mm a", Locale.getDefault()) }

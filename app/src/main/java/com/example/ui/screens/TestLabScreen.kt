@@ -325,7 +325,7 @@ private fun BenchmarkCaseItem(
 
                 val matrixClassification = when {
                     testCase.groundTruthMalicious && predictedMalicious -> "True Positive (Scam Caught)"
-                    !testCase.groundTruthMalicious && !predictedMalicious -> "True Negative (Safe Verified)"
+                    !testCase.groundTruthMalicious && !predictedMalicious -> "True Negative (Benign Verified)"
                     !testCase.groundTruthMalicious && predictedMalicious -> "False Alarm"
                     else -> "Missed Scam"
                 }
