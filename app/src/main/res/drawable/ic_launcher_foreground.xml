@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Shield in Warm Amber -->
+    <path
+        android:fillColor="#E88A1A"
+        android:pathData="M54,23 L80,33 C80,57 69,76 54,85 C39,76 28,57 28,33 Z" />
+
+    <!-- Inner Earth Shield Core -->
+    <path
+        android:fillColor="#1D1916"
+        android:pathData="M54,26.5 L76.5,35 C76.5,56 67,73 54,81.5 C41,73 31.5,56 31.5,35 Z" />
+
+    <!-- Padlock Shackle in Golden Ochre -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:pathData="M47,51 V45 C47,41.13 50.13,38 54,38 C57.87,38 61,41.13 61,45 V51" />
+
+    <!-- Padlock Body in Warm Amber -->
+    <path
+        android:fillColor="#E88A1A"
+        android:pathData="M43,51 H65 C66.66,51 68,52.34 68,54 V66 C68,67.66 66.66,69 65,69 H43 C41.34,69 40,67.66 40,66 V54 C40,52.34 41.34,51 43,51 Z" />
+
+    <!-- Lock Keyhole Dot -->
+    <path
+        android:fillColor="#1D1916"
+        android:pathData="M54,56 C52.9,56 52,56.9 52,58 C52,58.7 52.4,59.3 53,59.7 V64 H55 V59.7 C55.6,59.3 56,58.7 56,58 C56,56.9 55.1,56 54,56 Z" />
+</vector>

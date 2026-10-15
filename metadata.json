@@ -1,0 +1,6 @@
+{
+  "name": "PhishGuard AI",
+  "description": "Intelligent real-time phishing and digital fraud detection with explainable risk scores and benchmark lab.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
